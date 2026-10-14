@@ -47,3 +47,4 @@ body{font-family:'Segoe UI',Arial,Helvetica,sans-serif}.brand{gap:12px}.brand>sp
 @media(max-width:800px){.hero-banner{padding:23px 20px 15px}.hero-banner h2{font-size:25px}.hero-banner p{font-size:14px;line-height:1.75}.banner-controls{margin-inline:15px}}
 @media(max-width:600px){.hero-banners{border-radius:16px}.hero-banner{padding:27px 25px 20px}.hero-banner h2{font-size:29px;margin-bottom:20px}.hero-banner p{font-size:16px;line-height:1.8}.banner-number{margin-bottom:23px}.banner-controls{margin-inline:21px}.contact-form-only .form-panel{padding:25px 20px}.contact-form-only .form-row{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.hero-banner,.banner-pagination button span{transition:none}}
+.hero-banner p strong{font-weight:650;color:#344b28}.hero-banner p em{font-style:italic;color:#435737}

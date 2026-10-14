@@ -1,0 +1,92 @@
+/* Единая типографика: одна гарнитура, три уровня заголовков, редкие смысловые акценты. */
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.pdf-copy p { text-wrap: pretty; }
+.pdf-copy p strong { font-weight: 600; color: var(--ink); }
+.pdf-hero h1 { line-height: 1.12; letter-spacing: -.035em; }
+.pdf-hero h1 strong { font-weight: 600; }
+.pdf-hero h1 span { font-weight: 400; line-height: 1.4; letter-spacing: -.02em; }
+.pdf-hero-details { font-size: 16px; line-height: 1.8; }
+.pdf-hero-details p:last-child { font-size: 15px; }
+
+.pdf-copy .pdf-section-heading h2 {
+  font-size: clamp(30px, 3.1vw, 42px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+.pdf-section-heading > .section-lead {
+  max-width: 780px;
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 22px;
+}
+.pdf-copy .pdf-process .step h3 {
+  max-width: none;
+  min-height: 56px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -.015em;
+  text-wrap: pretty;
+  margin-bottom: 18px;
+}
+.pdf-copy .pdf-process .step p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555f50;
+}
+.pdf-service h2 {
+  font-size: clamp(29px, 2.6vw, 36px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+.pdf-service-copy { font-size: 17px; line-height: 1.85; }
+.pdf-copy .pdf-risk h3 {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -.015em;
+  text-wrap: pretty;
+}
+.pdf-copy .pdf-risk p { font-size: 17px; line-height: 1.85; }
+.model-card h3 { font-size: 19px; font-weight: 600; line-height: 1.4; letter-spacing: -.015em; }
+
+.hero-banner h2 { font-size: 30px; font-weight: 600; line-height: 1.3; letter-spacing: -.025em; text-wrap: pretty; }
+.hero-banner p { font-size: 16px; line-height: 1.85; }
+.pdf-copy .hero-banner p strong { font-weight: 600; color: #344b28; }
+.hero-banner p em { font-style: normal; }
+.pdf-copy .form-panel > h2 { font-size: 30px; font-weight: 600; line-height: 1.3; letter-spacing: -.02em; }
+.field > label { font-size: 14px; font-weight: 600; line-height: 1.5; }
+.field input, .field textarea { font-size: 16px; line-height: 1.5; }
+.consent { font-size: 12px; line-height: 1.8; }
+.privacy-page p, .privacy-page li { font-size: 16px; line-height: 1.85; }
+.privacy-page h2 { font-weight: 600; line-height: 1.35; }
+
+@media (max-width: 1100px) {
+  .hero-banner h2 { font-size: 27px; }
+  .pdf-copy .pdf-process .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .pdf-copy .pdf-process .step h3 { min-height: 0; }
+  .hero-banner h2 { font-size: 25px; }
+}
+@media (max-width: 600px) {
+  .pdf-copy .pdf-process .steps-grid { grid-template-columns: 1fr; }
+  .pdf-hero-details { font-size: 16px; }
+  .pdf-copy .pdf-section-heading h2 { font-size: 30px; line-height: 1.3; }
+  .pdf-section-heading > .section-lead { font-size: 16px; line-height: 1.8; }
+  .pdf-copy .pdf-process .step h3 { font-size: 20px; margin-bottom: 13px; }
+  .pdf-service-copy, .pdf-copy .pdf-risk p { font-size: 16px; line-height: 1.85; }
+  .pdf-copy .pdf-risk h3 { font-size: 21px; }
+  .hero-banner h2 { font-size: 28px; line-height: 1.3; }
+  .hero-banner p { font-size: 16px; }
+}

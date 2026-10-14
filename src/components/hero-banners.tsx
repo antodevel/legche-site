@@ -6,23 +6,21 @@ const banners = [
   {
     title: 'Нужна конкретная модель?',
     paragraphs: [
-      'Найдём лучшую цену напрямую от производителя и доставим с расширенной гарантией.',
-      'Избавляем от поиска по десяткам сайтов и риска перекупщиков и мошенников.',
+      <><strong>Найдём лучшую цену</strong> напрямую от производителя и доставим <strong>с расширенной гарантией.</strong></>,
+      <>Избавляем от поиска по десяткам сайтов и риска перекупщиков и мошенников.</>,
     ],
   },
   {
     title: 'Нужна экспертная помощь в подборе?',
     paragraphs: [
-      'За 1 час подберём идеальную конфигурацию под диагноз и среду, ИПР.',
-      'Простым языком объясним практическую значимость каждой опции. Вы будете точно знать, за что платите и почему это важно.',
+      <><strong>За 1 час</strong> подберём идеальную конфигурацию под диагноз и среду, ИПР.</>,
+      <>Простым языком объясним практическую значимость каждой опции. Вы будете точно знать, <strong>за что платите и почему это важно.</strong></>,
     ],
   },
 ];
 
 export function HeroBanners() {
   const [active, setActive] = useState(0);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [hidden, setHidden] = useState(false);
 
@@ -40,20 +38,17 @@ export function HeroBanners() {
   }, []);
 
   useEffect(() => {
-    if (hovered || focused || reducedMotion || hidden) return;
-    const timer = window.setTimeout(() => setActive(current => (current + 1) % banners.length), 14000);
+    if (reducedMotion || hidden) return;
+    const timer = window.setTimeout(() => setActive(current => (current + 1) % banners.length), 5000);
     return () => window.clearTimeout(timer);
-  }, [active, hovered, focused, reducedMotion, hidden]);
+  }, [active, reducedMotion, hidden]);
 
-  return <div className="hero-banners" role="region" aria-roledescription="карусель" aria-label="Помощь с покупкой и подбором коляски"
-    onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-    onFocusCapture={() => setFocused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false); }}>
-    <div className="banner-slides" aria-live={focused || reducedMotion ? 'polite' : 'off'}>
+  return <div className="hero-banners" role="region" aria-roledescription="карусель" aria-label="Помощь с покупкой и подбором коляски">
+    <div className="banner-slides" aria-live={reducedMotion ? 'polite' : 'off'}>
       {banners.map((banner, index) => <div className={'hero-banner ' + (index === active ? 'is-active' : '')} key={banner.title}
         role="group" aria-roledescription="баннер" aria-label={`${index + 1} из ${banners.length}`} aria-hidden={index !== active} inert={index !== active}>
-        <span className="banner-number" aria-hidden="true">0{index + 1}<span className="banner-number-line" /></span>
         <h2>{banner.title}</h2>
-        {banner.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+        {banner.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}
       </div>)}
     </div>
     <div className="banner-controls">
