@@ -2,7 +2,7 @@ import { Header } from '@/components/header';
 import { Arrow } from '@/components/icons';
 import { LeadForm } from '@/components/lead-form';
 import { ModelExamples } from '@/components/model-examples';
-import Image from 'next/image';
+import { HeroBanners } from '@/components/hero-banners';
 
 // Формулировки PDF с согласованными исправлениями опечаток, регистра и пунктуации.
 const steps = [
@@ -30,10 +30,7 @@ export default function Home() {
         </div>
         <a className="button" href="#contact">Начать бесплатный подбор <Arrow /></a>
         </div>
-        <figure className="hero-product">
-          <div className="hero-product-art"><span className="hero-product-orbit" aria-hidden="true" /><Image src="/models/avantgarde-4.png" alt="Активная коляска Otto Bock Avantgarde 4" width={330} height={330} priority sizes="(max-width: 600px) 280px, (max-width: 1000px) 40vw, 440px" /></div>
-          <figcaption><span className="product-caption-dot" aria-hidden="true" />Otto Bock Avantgarde 4</figcaption>
-        </figure>
+        <HeroBanners />
       </section></div>
       <section className="section container pdf-process" id="process" aria-labelledby="process-title">
         <div className="pdf-section-heading"><h2 id="process-title">Подбор в экосистеме «Легче»</h2><p><em>Мы находим баланс между требованиями ИПРА, бюджетом и реальной потребностью клиента.</em></p></div>
@@ -48,7 +45,7 @@ export default function Home() {
         <div className="risks-list">{risks.map(([title, text]) => <article className="risk pdf-risk" key={title}><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
       <section className="models-section" id="models" aria-labelledby="models-title"><div className="container"><div className="pdf-section-heading"><h2 id="models-title">70 моделей российских и европейских брендов.</h2></div><ModelExamples /></div></section>
-      <section className="section contact-section container" id="contact" aria-labelledby="contact-title"><div className="contact-copy pdf-contact-copy"><p>Напишите сейчас:</p><ul className="contact-reasons"><li>Ответ сразу.</li><li>Экспертный подбор.</li><li>Помощь в замерах.</li></ul></div><div className="form-panel"><h2 id="contact-title">Форма заявки</h2><LeadForm /></div></section>
+      <section className="section contact-section contact-form-only container" id="contact" aria-labelledby="contact-title"><div className="form-panel"><h2 id="contact-title">Форма заявки</h2><LeadForm /></div></section>
     </main>
     <footer className="site-footer"><div className="container pdf-footer"><a href="/privacy">Политика конфиденциальности</a></div></footer>
   </>;
