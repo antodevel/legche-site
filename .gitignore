@@ -1,0 +1,8 @@
+node_modules/
+.next/
+.env*
+!.env.example
+*.tsbuildinfo
+tmp/
+test-results/
+.DS_Store
