@@ -11,21 +11,15 @@ const models = [
 
 export function ModelExamples() {
   return <div className="model-examples">
-    <div className="model-examples-heading">
-      <h3>Некоторые из моделей</h3>
-      <p>Конфигурацию подбираем индивидуально.</p>
-    </div>
     <ul className="models-grid" aria-label="Примеры активных колясок">
       {models.map(model => <li className="model-card" key={model.image}>
         <div className="model-image">
           <Image src={'/models/' + model.image} alt={'Активная коляска ' + model.name} width={330} height={330} sizes="(max-width: 600px) 280px, (max-width: 900px) 40vw, 330px" />
         </div>
         <div className="model-card-copy">
-          <span className="model-brand">{model.brand}</span>
-          <h4>{model.name}</h4>
+          <h3>{model.name}</h3>
         </div>
       </li>)}
     </ul>
-    <p className="model-disclaimer">На фото — примеры моделей. Доступность и подходящую комплектацию уточним во время подбора.</p>
   </div>;
 }

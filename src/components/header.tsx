@@ -1,12 +1,6 @@
-'use client';
-import { useState } from 'react';
-import { Arrow } from './icons';
-
 export function Brand() {
-  return <a className="brand" href="/#top" aria-label="Легче — на главную"><img src="/logo.svg" alt="" width="48" height="40" /><span>легче<span className="brand-caption">доступная мобильность</span></span></a>;
+  return <a className="brand" href="/#top" aria-label="Легче — Экосистема мобильности — на главную"><img src="/logo.svg" alt="" width="48" height="40" /><span className="brand-name">легче</span><span className="brand-caption">Экосистема мобильности</span></a>;
 }
-const links = [['#process', 'Как мы подбираем'], ['#approach', 'Почему «Легче»'], ['#models', 'Коляски']];
 export function Header() {
-  const [open, setOpen] = useState(false);
-  return <header className="site-header"><div className="container header-inner"><Brand /><nav className="desktop-nav" aria-label="Основная навигация">{links.map(([href, label]) => <a key={href} href={href}>{label}</a>)}</nav><a className="button button-small header-cta" href="#contact">Начать подбор <Arrow diagonal /></a><button className="menu-toggle" type="button" aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Закрыть меню' : 'Открыть меню'} onClick={() => setOpen(!open)}><span>{open ? 'Закрыть' : 'Меню'}</span><span aria-hidden="true">{open ? '×' : '☰'}</span></button></div>{open && <nav id="mobile-menu" className="mobile-nav container" aria-label="Мобильная навигация">{[...links, ['#contact', 'Начать подбор']].map(([href, label]) => <a href={href} key={href} onClick={() => setOpen(false)}>{label}<Arrow /></a>)}</nav>}</header>;
+  return <header className="site-header"><div className="container header-inner"><Brand /><a className="button button-small write-us" href="#contact"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a9 9 0 0 1 18 0Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><path d="M7 10h8M7 14h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>Написать нам</a></div></header>;
 }

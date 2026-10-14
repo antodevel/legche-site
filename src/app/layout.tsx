@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Легче — подбор активной коляски под вашу жизнь',
-  description: 'Экосистема доступной мобильности «Легче». Бесплатный подбор активной коляски под бюджет, индивидуальные потребности и доступную среду. Помощь с ИПРА и фондами. Доставка по России.',
+  title: 'Легче — Экосистема мобильности',
+  description: 'Подберём активную коляску под бюджет, диагноз, доступную среду. Принимаем сертификаты СФР. Доставляем по всей РФ.',
   icons: { icon: '/icon.svg' },
-  openGraph: { title: 'Легче — свобода движения начинается с подбора', description: 'Активные коляски. Индивидуальный подбор, помощь с ИПРА и финансированием.', locale: 'ru_RU', type: 'website' },
+  openGraph: { title: 'Легче — Экосистема мобильности', description: 'Подберём активную коляску под бюджет, диагноз, доступную среду.', locale: 'ru_RU', type: 'website' },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="ru"><body>{children}</body></html>;
 }
+
